@@ -24,12 +24,12 @@ void display() {
         glVertex2f(x, 15.0f);
     }
 
-    // Remarcar la cuadrícula (-10,0 / 10,0) en rojo
+    // Remarcar la cuadrÃ­cula (-10,0 / 10,0) en rojo
     glColor3f(1.0f, 0.0f, 0.0f); // Rojo
     glVertex2f(-15.0f, 0.0f);
     glVertex2f(15.0f, 0.0f);
 
-    // Remarcar la cuadrícula (0, -10 / 0, 10) en rojo
+    // Remarcar la cuadrÃ­cula (0, -10 / 0, 10) en rojo
     glVertex2f(0.0f, -15.0f);
     glVertex2f(0.0f, 15.0f);
     glEnd();
@@ -47,7 +47,7 @@ void display() {
     
     //Dibuja la recta que pasa por los puntos(10, 1) y(2, 6)  - ALGORITMO DDA
     glColor3f(1.0f, 1.0f, 1.0f); // Blanco
-    glBegin(GL_LINES); // Inicia el dibujo de líneas
+    glBegin(GL_LINES); // Inicia el dibujo de lÃ­neas
     int x1 = 10;
     int y1 = 1;
     int x2 = 2;
@@ -60,9 +60,10 @@ void display() {
     float x = x1, y = y1;
 
     for (int i = 0; i <= steps; i++) {
-        glVertex2f(x, y); // Agrega un punto a la línea
+        glVertex2f(x, y); // Agrega un punto a la lÃ­nea
         x += xIncrement;
         y += yIncrement;
+        glVertex2f(x, y); // Agrega un punto a la lÃ­nea
     }
     glEnd(); 
     
@@ -87,7 +88,7 @@ void display() {
     glBegin(GL_LINES);
 
     int radio = 12;
-    int numSegmentos = 100;  // Mayor resolución
+    int numSegmentos = 100;  // Mayor resoluciÃ³n
     float incrementoAngular = 360.0f / numSegmentos;
 
     for (int i = 0; i < numSegmentos; i++) {
@@ -153,7 +154,7 @@ void display() {
 
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
-    glutCreateWindow("Recta en Cuadrícula y Circunferencia");
+    glutCreateWindow("Recta en CuadrÃ­cula y Circunferencia");
     glutInitWindowSize(900, 600);
     glutInitWindowPosition(100, 100);
     glutDisplayFunc(display);
